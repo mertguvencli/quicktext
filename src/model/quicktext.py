@@ -46,7 +46,7 @@ class QuickText:
             "expire_at": now + settings.EXPIRE_CACHE
         }
 
-    def get(self) -> dict:
+    def get(self, client_id=None) -> dict:
         def friendly_format(timestamp):
             return datetime.fromtimestamp(timestamp).strftime(settings.DATE_FORMAT) # noqa
 
@@ -54,6 +54,11 @@ class QuickText:
             model = self.cache[self.key]
             model['created_at_friendly'] = friendly_format(model['created_at'])
             model['expire_at_friendly'] = friendly_format(model['expire_at'])
+            if client_id:
+                if len(model["password"]) > 0 and model["owner_client_id"] != client_id: # noqa
+                    model["is_locked"] = True
+                else:
+                    model["is_locked"] = False
             return model
 
     def delete(self) -> None:

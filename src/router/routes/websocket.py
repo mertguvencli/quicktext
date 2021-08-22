@@ -48,7 +48,7 @@ def channel_event(message):
     emit(
         'channel',
         {
-            'data': quick.get(),
+            'data': quick.get(client_id=client_id),
             'typing_client_id': client_id,
             'viewer_count': get_room_viewers(room),
         },
