@@ -1,0 +1,10 @@
+flask
+flask-socketio
+cachetools
+flake8
+psutil
+pytesseract
+Pillow
+gunicorn
+wheel
+eventlet==0.30.2

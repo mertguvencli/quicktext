@@ -1,0 +1,13 @@
+[Unit]
+Description=Gunicorn instance to serve quicktext
+After=network.target
+
+[Service]
+User=www-data
+Group=www-data
+WorkingDirectory=/home/quicktext/src
+Environment="PATH=/home/quicktext/venv/bin"
+ExecStart=/home/quicktext/venv/bin/gunicorn --worker-class eventlet -w 1 --bind unix:quicktext.sock -m 007 main:app
+
+[Install]
+WantedBy=multi-user.target
