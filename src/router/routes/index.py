@@ -36,7 +36,7 @@ def get_all_items():
 
 @app.route('/', methods=("GET",))
 def index():
-    key = shorten.generate()
+    key = shorten.generate(cache)
     shared_items = get_all_items()
     return base_response(
         render_template(

@@ -315,7 +315,7 @@ input:checked + .slider .feather-sun {
   line-height: 50px;
   text-align: center;
   align-items: center;
-  font-size: 3rem;
+  /* font-size: 3rem; */
   margin: 0 2px;
 
   background-color: var(--background);
