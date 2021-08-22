@@ -52,14 +52,30 @@ body{
 .text-1{
   color: #f79533
 }
+.text-1::placeholder {
+  color: #f79533;
+  opacity: 0.5;
+}
 .text-2{
   color: #f37055;
+}
+.text-2::placeholder{
+  color: #f37055;
+  opacity: 0.5;
 }
 .text-3{
   color: #ef4e7b;
 }
+.text-3::placeholder{
+  color: #ef4e7b;
+  opacity: 0.5;
+}
 .text-4{
   color: #a166ab;
+}
+.text-4::placeholder{
+  color: #a166ab;
+  opacity: 0.5;
 }
 
 .modal input[type=text] {
@@ -303,7 +319,7 @@ input:checked + .slider .feather-sun {
   margin: 0 2px;
 
   background-color: var(--background);
-  color: var(--color);
+  /* color: var(--color); */
   border-image-source: linear-gradient(#f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
   border-width: 2px;
   border-image-slice: 1;
