@@ -5,5 +5,5 @@ new TypeIt('#type-and-share', {
     speed: 100,
     breakLines: false,
     waitUntilVisible: true,
-    cursor: true,
+    cursor: false,
 }).go();

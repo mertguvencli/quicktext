@@ -1,4 +1,4 @@
-from flask import render_template, request, redirect
+from flask import render_template, request, redirect, jsonify
 from router.route import app, cache
 from router.depends import base_response, get_client_id, get_remote_addr
 from utils import shorten
@@ -78,4 +78,23 @@ def offline():
         render_template(
             'pages/offline.html'
         )
+    )
+
+
+@app.route('/check', methods=("POST",))
+def check():
+    payload = request.get_json()
+    if not payload or "key" not in payload:
+        return jsonify({
+            "success": False,
+            "found": False,
+            "message": "Request is invalid!"
+        }), 400
+
+    return base_response(
+        jsonify({
+            "success": True,
+            "found": True if payload["key"] in cache.keys() else False,
+            "message": ""
+        })
     )

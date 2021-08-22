@@ -3,16 +3,19 @@
 {% block body %}
 
     <div class="container mt-5 mt-3">
-        <div class="row">            
+        <div class="row">
+            <div class="col-12 d-none" id="sharing-code">
+                <h1 class="display-3"><span class="display-6 text-muted">Sharing Code:</span>&nbsp;{{key}}</h1>
+            </div>
             <div class="col-12">
                 <div class="d-flex justify-content-between">
                     <p class="mt-auto mb-auto">Viewers (live): <span id="viewer">0</span></p>
-                    <div class="d-flex justify-content-end">
-                        <div class="row d-none" style="padding-right: 10px;" id="typing">
+                    <div class="d-flex justify-content-end" style="font-size: small;">
+                        <div class="row d-none" id="typing">
                             <div class="col-1 mt-auto mb-auto">
                                 <span class="online"></span>
                             </div>
-                            <span class="col-1 mt-auto mb-auto">Typing...</span>
+                            <span class="col-1 mt-auto mb-auto">typing...</span>
                         </div>
                         {%if data.expire_at_friendly%}
                             <p class="mt-auto mb-auto text-muted">Expire At: {{data.expire_at_friendly}}</p>

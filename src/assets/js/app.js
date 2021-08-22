@@ -60,6 +60,7 @@ const handleShare = () => {
     .then(json => {
         hideTools()
         new bootstrap.Toast(document.getElementById('toast'), {delay: 3000}).show();
+        $('#sharing-code').removeClass('d-none');
     })
 }
 const handleImageToText = (img) => {

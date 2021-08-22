@@ -62,7 +62,7 @@ body{
   color: #a166ab;
 }
 
-input[type=text] {
+.modal input[type=text] {
   background-color: var(--background);
   color: var(--text);
 }
@@ -281,4 +281,38 @@ input:checked + .slider .feather-sun {
   white-space: nowrap;
   overflow: hidden;
   cursor: pointer;
+}
+
+.digit-body{
+  height: 100%;
+  margin: 0;
+  font-weight: 200;
+  display: flex;
+  align-items: center;
+  justify-content:space-between;
+  flex-direction: column;
+}
+
+.digit-group input {
+  width: 50px;
+  height: 70px;
+  line-height: 50px;
+  text-align: center;
+  align-items: center;
+  font-size: 3rem;
+  margin: 0 2px;
+
+  background-color: var(--background);
+  color: var(--color);
+  border-image-source: linear-gradient(#f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+  border-width: 2px;
+  border-image-slice: 1;
+  border-radius: 5px;
+  outline: none;
+}
+
+.digit-item::placeholder {
+  font-weight:lighter !important;
+  /* color: var(--color); */
+  /* opacity: 0.2; */
 }

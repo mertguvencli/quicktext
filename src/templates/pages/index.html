@@ -1,6 +1,20 @@
 {% extends "layout.html" %}
 
 {% block body %}
+
+
+    <div class="digit-body mt-3">
+        <p>What is your sharing code ?</p>
+        <form method="get" class="digit-group" data-group-name="digits" data-autosubmit="false" autocomplete="off">
+            <input type="text" placeholder="c" class="digit-item" id="digit-1" name="digit-1" data-next="digit-2" />
+            <input type="text" placeholder="o" class="digit-item" id="digit-2" name="digit-2" data-next="digit-3" data-previous="digit-1" />
+            <input type="text" placeholder="d" class="digit-item" id="digit-3" name="digit-3" data-next="digit-4" data-previous="digit-2" />
+            <input type="text" placeholder="e" class="digit-item" id="digit-4" name="digit-4" data-previous="digit-3" />
+        </form>
+        <p class="d-none" id="found">You are directing now.</p>
+        <p class="d-none" id="not-found">We couldn't find anything.</p>
+    </div>
+
     {%if shared_items%}
         <section id="recent">
             <div class="mt-5 mb-2">
@@ -27,8 +41,8 @@
                     <h1 id="type-and-share"></h1>
                 </button>
             </div>
-            <div class="col-sm-8 col-lg-6">
-                <img class="d-block mx-lg-auto rounded-lg-3 img-fluid landing-image-1" alt="Easy & Secure online text sharing" loading="lazy">
+            <div class="col-sm-8 col-lg-6 overflow-hidden mx-auto">
+                <img class="d-block mx-lg-auto rounded-lg-3 mx-auto img-fluid landing-image-1" alt="Easy & Secure online text sharing" loading="lazy">
             </div>
         </div>
     </div>
@@ -36,7 +50,7 @@
     <div class="container my-5">
         <div class="row p-4 align-items-center rounded-3 border shadow-sm">
             <div class="col-lg-5 overflow-hidden">
-                <img class="d-block mx-lg-auto rounded-lg-3 img-fluid landing-image-2" alt="Collaboration" loading="lazy">
+                <img class="d-block mx-lg-auto rounded-lg-3 mx-auto img-fluid landing-image-2" alt="Collaboration" loading="lazy">
             </div>
             <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
                 <h1 class="display-4 fw-bold lh-1">Collaboration made easy!</h1>
@@ -72,4 +86,5 @@
         const key = "{{key}}"
     </script>
     <script src={{ url_for('static', filename='js/index.js') }}></script>
+    <script src={{ url_for('static', filename='js/digit.js') }}></script>
 {% endblock %}
