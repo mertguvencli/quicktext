@@ -6,10 +6,10 @@
     <div class="digit-body mt-3">
         <p>What is your sharing code ?</p>
         <form method="get" class="digit-group" data-group-name="digits" data-autosubmit="false" autocomplete="off">
-            <input type="text" autocorrect="off" autocapitalize="none" autocomplete="off" placeholder="c" class="digit-item" id="digit-1" name="digit-1" data-next="digit-2" />
-            <input type="text" autocorrect="off" autocapitalize="none" autocomplete="off" placeholder="o" class="digit-item" id="digit-2" name="digit-2" data-next="digit-3" data-previous="digit-1" />
-            <input type="text" autocorrect="off" autocapitalize="none" autocomplete="off" placeholder="d" class="digit-item" id="digit-3" name="digit-3" data-next="digit-4" data-previous="digit-2" />
-            <input type="text" autocorrect="off" autocapitalize="none" autocomplete="off" placeholder="e" class="digit-item" id="digit-4" name="digit-4" data-previous="digit-3" />
+            <input type="number" inputmode="numeric" pattern="[0-9]*" autocorrect="off" autocapitalize="none" autocomplete="off" placeholder="c" class="digit-item" id="digit-1" name="digit-1" data-next="digit-2" />
+            <input type="number" inputmode="numeric" pattern="[0-9]*" autocorrect="off" autocapitalize="none" autocomplete="off" placeholder="o" class="digit-item" id="digit-2" name="digit-2" data-next="digit-3" data-previous="digit-1" />
+            <input type="number" inputmode="numeric" pattern="[0-9]*" autocorrect="off" autocapitalize="none" autocomplete="off" placeholder="d" class="digit-item" id="digit-3" name="digit-3" data-next="digit-4" data-previous="digit-2" />
+            <input type="number" inputmode="numeric" pattern="[0-9]*" autocorrect="off" autocapitalize="none" autocomplete="off" placeholder="e" class="digit-item" id="digit-4" name="digit-4" data-previous="digit-3" />
         </form>
         <p class="d-none text-muted" id="found">You are directing now.</p>
         <p class="d-none text-muted" id="not-found">We couldn't find anything.</p>

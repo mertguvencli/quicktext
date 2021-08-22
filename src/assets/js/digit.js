@@ -35,7 +35,8 @@ $('.digit-group').find('input').each(function() {
 			if(prev.length) {
 				$(prev).select();
 			}
-		} else if((e.keyCode >= 48 && e.keyCode <= 57) || (e.keyCode >= 65 && e.keyCode <= 90) || (e.keyCode >= 96 && e.keyCode <= 105) || e.keyCode === 39) {
+		} else if((e.keyCode >= 48 && e.keyCode <= 57) || e.keyCode === 39) {
+			// (e.keyCode >= 65 && e.keyCode <= 90) || (e.keyCode >= 96 && e.keyCode <= 105)
 			var next = parent.find('input#' + $(this).data('next'));
 			if(next.length) {
 				$(next).select();
