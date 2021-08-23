@@ -7,9 +7,10 @@
   --icon:#202124;
   --text-area-background-color: #F7F7F7;
   --qr-border: #cccccc8c;
-  --landing-image-1: url("/static/images/light-1.svg");
-  --landing-image-2: url("/static/images/light-2.svg");
+  --landing-image-1: url("/static/images/light-4.svg");
+  --landing-image-2: url("/static/images/light-5.svg");
 }
+
 
 [data-theme="dark"] {
   --background: #202124;
@@ -343,4 +344,12 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type=number] {
   -moz-appearance: textfield;
+}
+
+.sharing-block {
+  font-size: 20pt;
+  line-height: 0.6;
+}
+.sharing-code {
+  font-weight: 900;
 }

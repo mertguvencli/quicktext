@@ -31,7 +31,6 @@ const handleCopy = () => {
 const hideTools = () => {
     furtherSettings.addClass('d-none')
     toolboxGroup1.addClass('d-none')
-
     copy.removeClass('d-none')
     qrcode.removeClass('d-none')
 }
@@ -40,7 +39,7 @@ const showTools = () => {
     toolboxGroup1.removeClass('d-none')
     copy.addClass('d-none')
     qrcode.addClass('d-none')
-}        
+}
 const handleShare = () => {
     fetch("/share", {
         method: 'POST',
@@ -59,7 +58,7 @@ const handleShare = () => {
     .then(response => response.json())
     .then(json => {
         hideTools()
-        new bootstrap.Toast(document.getElementById('toast'), {delay: 3000}).show();
+        new bootstrap.Toast(document.getElementById('toast'), {delay: 1000}).show();
         $('#sharing-code').removeClass('d-none');
     })
 }
@@ -88,6 +87,8 @@ socket.on('channel', (message) => {
         if (response.viewer_count) $('#viewer').text(response.viewer_count);
 
         if (response.data) {
+            $('#sharing-code').removeClass('d-none');
+
             if(!response.data.viewer_can_edit && response.data.owner_client_id != clientId) {
                 $('#text').prop('disabled', true);
             }

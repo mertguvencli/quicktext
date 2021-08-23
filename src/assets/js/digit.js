@@ -15,10 +15,10 @@ const checkCode = (code) => {
     .then(response => response.json())
     .then(json => {
 		if (json.found) {
-			$('#found').removeClass("d-none");
+			$('#search-result').text("You are directing now.");
 			redirectToCode(code)
 		} else {
-			$('#not-found').removeClass("d-none");
+			$('#search-result').text("Couldn't found.");
 		}
 	})
 }
@@ -26,8 +26,7 @@ $('.digit-group').find('input').each(function() {
 	$(this).attr('maxlength', 1);
 	$(this).on('keyup', function(e) {
 		var parent = $($(this).parent());
-		$('#found').addClass("d-none");
-		$('#not-found').addClass("d-none");
+		$('#search-result').html("&nbsp;");
 
 		if(e.keyCode === 8 || e.keyCode === 37) {
 			var prev = parent.find('input#' + $(this).data('previous'));
