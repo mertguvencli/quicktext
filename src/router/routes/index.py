@@ -24,12 +24,14 @@ def get_all_items():
             # owners can see their all items
             if value["owner_client_id"] == get_client_id(request):
                 append(key)
+
     results = []
     for key in items:
         model = cache[key]
         model['key'] = key
         model['summary'] = str(model["text"][:7]) + "..."
         results.append(model)
+
     return results
 
 

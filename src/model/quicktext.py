@@ -31,7 +31,7 @@ class QuickText:
         return self.key in self.cache.keys()
 
     def add(self):
-        now = time()
+        now = int(time())
         self.cache[self.key] = {
             "text": self.text,
             "owner_client_id": self.owner_client_id,
