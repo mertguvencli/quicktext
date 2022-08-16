@@ -16,12 +16,11 @@ def get_all_items():
 
     for key, value in cache.items():
         if "text" in value:  # prevent to viewer list
-            if len(value["password"]) == 0:
-                if value["share_on_network"]:
-                    if value["remote_addr"] == get_remote_addr(request):
-                        append(key)
-                if get_remote_addr(request) in value["ip_whitelist"]:
+            if value["share_on_network"]:
+                if value["remote_addr"] == get_remote_addr(request):
                     append(key)
+            if get_remote_addr(request) in value["ip_whitelist"]:
+                append(key)
             # owners can see their all items
             if value["owner_client_id"] == get_client_id(request):
                 append(key)

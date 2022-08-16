@@ -3,12 +3,7 @@
 {% block body %}
     <div class="digit-body mt-3">
         <p>What is your sharing code ?</p>
-        <form method="get" class="digit-group" data-group-name="digits" data-autosubmit="false" autocomplete="off">
-            <input type="number" oninput="handleOneDigit(this)" inputmode="numeric" pattern="[0-9]*" min="0" max="9" step="1" autocorrect="off" autocapitalize="none" autocomplete="off" placeholder="-" class="digit-item" id="digit-1" name="digit-1" data-next="digit-2" />
-            <input type="number" oninput="handleOneDigit(this)" inputmode="numeric" pattern="[0-9]*" min="0" max="9" step="1" autocorrect="off" autocapitalize="none" autocomplete="off" placeholder="-" class="digit-item" id="digit-2" name="digit-2" data-next="digit-3" data-previous="digit-1" />
-            <input type="number" oninput="handleOneDigit(this)" inputmode="numeric" pattern="[0-9]*" min="0" max="9" step="1" autocorrect="off" autocapitalize="none" autocomplete="off" placeholder="-" class="digit-item" id="digit-3" name="digit-3" data-next="digit-4" data-previous="digit-2" />
-            <input type="number" oninput="handleOneDigit(this)" inputmode="numeric" pattern="[0-9]*" min="0" max="9" step="1" autocorrect="off" autocapitalize="none" autocomplete="off" placeholder="-" class="digit-item" id="digit-4" name="digit-4" data-previous="digit-3" />
-        </form>
+        <input type="number" id="sharing-code" class="qtext-input" />
         <p class="text-muted" id="search-result">&nbsp;</p>
     </div>
 

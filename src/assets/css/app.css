@@ -104,12 +104,26 @@ textarea{
   border-image: linear-gradient(45deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82) 1;
   /* resize: vertical; */
 }
+
 textarea::placeholder {
   font-size: 1.1rem !important;
   color: var(--text);
   text-align: center;
   padding-top: 20px;
   opacity: 0.6;
+}
+
+.qtext-input{
+  outline: none;
+  border: 2px solid var(--text);
+  border-radius: 20px;
+  background-color: var(--text-area-background-color);
+  color: var(--text);
+  padding: 15px;
+  max-width: 100px;
+  border-image: linear-gradient(45deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82) 1;
+  text-align: center;
+  /* resize: vertical; */
 }
 
 .gradient-border {
@@ -247,10 +261,10 @@ input:checked + .slider .feather-sun {
   -ms-animation: pulse 2s infinite cubic-bezier(0.66, 0, 0, 1);
   animation: pulse 2s infinite cubic-bezier(0.66, 0, 0, 1);
 }
-@-webkit-keyframes pulse {to {box-shadow: 0 0 0 20px rgba(0, 128, 0, 0);}}
-@-moz-keyframes pulse {to {box-shadow: 0 0 0 20px rgba(0, 128, 0, 0);}}
-@-ms-keyframes pulse {to {box-shadow: 0 0 0 20px rgba(0, 128, 0, 0);}}
-@keyframes pulse {to {box-shadow: 0 0 0 20px rgba(0, 128, 0, 0);}}
+@-webkit-keyframes pulse {to {box-shadow: 0 0 0 10px rgba(0, 128, 0, 0);}}
+@-moz-keyframes pulse {to {box-shadow: 0 0 0 10px rgba(0, 128, 0, 0);}}
+@-ms-keyframes pulse {to {box-shadow: 0 0 0 10px rgba(0, 128, 0, 0);}}
+@keyframes pulse {to {box-shadow: 0 0 0 10px rgba(0, 128, 0, 0);}}
 
 /* scroll */
 ::selection {

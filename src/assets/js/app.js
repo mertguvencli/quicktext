@@ -2,7 +2,6 @@ const applicationUrl = `${baseUrl}/${key}`
 const text = document.getElementById("text")
 const viewerCanEdit = $('#viewer_can_edit')
 const shareOnNetwork = $('#share_on_network')
-const password = $('#password')
 const ipWhitelist = $('#ip_whitelist')
 const furtherSettings = $('#furtherSettings')
 const share = $('#share')
@@ -50,7 +49,6 @@ const handleShare = () => {
         body: JSON.stringify({
             text : text.value,
             viewer_can_edit: viewerCanEdit.is(":checked"),
-            password: password.val(),
             ip_whitelist: ipWhitelist.val(),
             share_on_network: shareOnNetwork.is(":checked")
         }),

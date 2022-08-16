@@ -13,7 +13,6 @@ class QuickText:
         key: str,
         text: str = None,
         owner_client_id: str = None,
-        password: str = "",
         ip_whitelist: List = [],
         viewer_can_edit: bool = False,
         share_on_network: bool = False,
@@ -23,7 +22,6 @@ class QuickText:
         self.key = key
         self.text = text
         self.owner_client_id: str = owner_client_id
-        self.password: str = password
         self.ip_whitelist: List = ip_whitelist
         self.viewer_can_edit: bool = viewer_can_edit
         self.share_on_network: bool = share_on_network
@@ -37,7 +35,6 @@ class QuickText:
         self.cache[self.key] = {
             "text": self.text,
             "owner_client_id": self.owner_client_id,
-            "password": self.password,
             "ip_whitelist": self.ip_whitelist,
             "viewer_can_edit": self.viewer_can_edit,
             "share_on_network": self.share_on_network,
@@ -55,7 +52,7 @@ class QuickText:
             model['created_at_friendly'] = friendly_format(model['created_at'])
             model['expire_at_friendly'] = friendly_format(model['expire_at'])
             if client_id:
-                if len(model["password"]) > 0 and model["owner_client_id"] != client_id: # noqa
+                if model["owner_client_id"] != client_id: # noqa
                     model["is_locked"] = True
                 else:
                     model["is_locked"] = False
