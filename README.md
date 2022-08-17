@@ -23,3 +23,9 @@ curl 'https://qtext.io/q/9003'
 |share_on_network|bool|false|Visitors can view your sharing items without the sharing code if they have the same IP address as you|
 |viewer_can_edit|bool|false|Viewers can edit your data in real-time|
 |ip_whitelist|array|[ ]|Allows only that added IP addresses to view sharing items|
+
+
+# Contributing
+
+Contributions are welcome, and they are greatly appreciated! Every
+little bit helps, and credit will always be given.
