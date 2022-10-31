@@ -7,7 +7,7 @@ qtext is a simple and easy to use feature that allows you to easily collaborate 
 ## Parameters
 
 |Name|Type|Default|Description|
-|-----|----|-------|-----------|
+|----|----|-------|-----------|
 |text|string||Type anything that you want to share|
 |share_on_network|bool|false|Visitors can view your sharing items without the sharing code if they have the same IP address as you|
 |viewer_can_edit|bool|false|Viewers can edit your data in real-time|

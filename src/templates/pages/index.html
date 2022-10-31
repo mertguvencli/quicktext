@@ -1,82 +1,91 @@
 {% extends "layout.html" %}
 
 {% block body %}
-    <div class="sharing-content mt-3">
-        <p>What is your sharing code ?</p>
-        <input type="number" id="sharing-code" placeholder="Code" class="qtext-input" />
-        <p class="text-muted" id="search-result">&nbsp;</p>
+<div class="sharing-content mt-3">
+    <p>What is your sharing code ?</p>
+    <input type="number" id="sharing-code" placeholder="Code" class="qtext-input" />
+    <p class="text-muted" id="search-result">&nbsp;</p>
+</div>
+
+{%if shared_items%}
+<section id="recent">
+    <div class="mt-5 mb-2">
+        <h2>Recently Shared Items</h2>
     </div>
+    <div class="recently-list p-3 rounded">
+        {%for item in shared_items%}
+        <div class="list-gradient p-3 rounded recently-item" onclick="handleOpenApp('{{item.key}}')">
+            <p>{{item.summary}}</p>
+            <p class="text-center text-muted" style="font-size: small; margin-top: auto; margin-bottom: auto;">
+                {{item.expire_at_friendly}}</p>
+        </div>
+        {%endfor%}
+    </div>
+</section>
+{%endif%}
 
-    {%if shared_items%}
-        <section id="recent">
-            <div class="mt-5 mb-2">
-                <h2>Recently Shared Items</h2>
-            </div>
-            <div class="recently-list p-3 rounded">
-                {%for item in shared_items%}
-                    <div class="list-gradient p-3 rounded recently-item" onclick="handleOpenApp('{{item.key}}')">
-                        <p>{{item.summary}}</p>
-                        <p class="text-center text-muted" style="font-size: small; margin-top: auto; margin-bottom: auto;">{{item.expire_at_friendly}}</p>
-                    </div>
-                {%endfor%}
-            </div>
-        </section>
-    {%endif%}
+<div class="container">
+    <div class="row align-items-center g-5 py-5">
+        <div class="col-lg-6">
+            <h1 class="display-2 fw-bold lh-1 mb-3">Easy, Fast and Secure online text sharing</h1>
+            <p class="lead">We do not store your data in database cause we do not have any database! Most likely, it
+                never won't.</p>
+            <p class="text-muted">Technically, we are caching data in <a class="link-text"
+                    href="https://en.wikipedia.org/wiki/Random-access_memory">RAM</a> then delete it in 15 minutes.</p>
+            <button class="col-12 btn btn-lg btn-outline-primary px-5" onclick="StartApp()">
+                <h1 id="type-and-share"></h1>
+            </button>
+        </div>
+        <div class="col-sm-8 col-lg-6 overflow-hidden mx-auto">
+            <img class="d-block mx-lg-auto rounded-lg-3 mx-auto img-fluid landing-image-1"
+                alt="Easy, fast and secure online text sharing" loading="lazy">
+        </div>
+    </div>
+</div>
 
-    <div class="container">
-        <div class="row align-items-center g-5 py-5">
-            <div class="col-lg-6">
-                <h1 class="display-2 fw-bold lh-1 mb-3">Easy, Fast and Secure online text sharing</h1>
-                <p class="lead">We do not store your data in database cause we do not have any database! Most likely, it never won't.</p>
-                <p class="text-muted">Technically, we are caching data in <a class="link-text" href="https://en.wikipedia.org/wiki/Random-access_memory">RAM</a> then delete it in 15 minutes.</p>
-                <button class="col-12 btn btn-lg btn-outline-primary px-5" onclick="StartApp()">
-                    <h1 id="type-and-share"></h1>
-                </button>
+<div class="container my-5">
+    <div class="row p-4 align-items-center rounded-3 border shadow-sm">
+        <div class="col-lg-5 overflow-hidden">
+            <img class="d-block mx-lg-auto rounded-lg-3 mx-auto img-fluid landing-image-2" alt="Collaboration"
+                loading="lazy">
+        </div>
+        <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+            <h1 class="display-4 fw-bold lh-1">Collaboration made easy!</h1>
+            <h2 class="fw-bold lh-1">The sharing code is only <span class="text-1">f</span><span
+                    class="text-2">o</span><span class="text-3">u</span><span class="text-4">r</span> characters.</h2>
+            <p class="lead">You can work together with your viewers in real-time.</p>
+        </div>
+    </div>
+</div>
+
+<footer class="footer mt-auto py-3">
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-4">
+                <h5>Features</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2">Online Text Sharing</li>
+                    <li class="nav-item mb-2">Convert Image to Text</li>
+                    <li class="nav-item mb-2">Real-Time Collaboration</li>
+                </ul>
             </div>
-            <div class="col-sm-8 col-lg-6 overflow-hidden mx-auto">
-                <img class="d-block mx-lg-auto rounded-lg-3 mx-auto img-fluid landing-image-1" alt="Easy & Secure online text sharing" loading="lazy">
+            <div class="col-4">
+                <!-- <h5>Sponsoring</h5> -->
+            </div>
+            <div class="col-4">
+                <h5>Contribute</h5>
+                <p><a class="link-text text-decoration-none" href="https://github.com/mertguvencli/quicktext">
+                        <b class="fw-bold">Quick Text</b>
+                    </a> is an open-source
+                    and hobby project. Feel free to get in touch or ask about anything.</p>
+
             </div>
         </div>
     </div>
-
-    <div class="container my-5">
-        <div class="row p-4 align-items-center rounded-3 border shadow-sm">
-            <div class="col-lg-5 overflow-hidden">
-                <img class="d-block mx-lg-auto rounded-lg-3 mx-auto img-fluid landing-image-2" alt="Collaboration" loading="lazy">
-            </div>
-            <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
-                <h1 class="display-4 fw-bold lh-1">Collaboration made easy!</h1>
-                <h2 class="fw-bold lh-1">The sharing code is only <span class="text-1">f</span><span class="text-2">o</span><span class="text-3">u</span><span class="text-4">r</span> characters.</h2>
-                <p class="lead">You can work together with your viewers in real-time.</p>
-            </div>
-        </div>
-    </div>
-
-
-    <footer class="footer mt-auto py-3">
-        <div class="container mt-5">
-            <div class="row">
-                <div class="col-4">
-                    <h5>Features</h5>
-                    <ul class="nav flex-column">
-                        <li class="nav-item mb-2">Online Text Sharing</li>
-                        <li class="nav-item mb-2">Convert Image to Text</li>
-                        <li class="nav-item mb-2">Real-Time Collaboration</li>
-                    </ul>
-                </div>
-                <div class="col-4">
-                    <!-- <h5>Sponsoring</h5> -->
-                </div>
-                <div class="col-4">
-                    <h5>Contribute</h5>
-                    <p><a class="link-text" href="https://github.com/mertguvencli/quicktext">qtext.io</a> is an open-source and hobby project. Feel free to get in touch or ask about anything.</p>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <script>
-        const key = "{{key}}"
-    </script>
-    <script src={{ url_for('static', filename='js/index.js') }}></script>
-    <script src={{ url_for('static', filename='js/digit.js') }}></script>
+</footer>
+<script>
+    const key = "{{key}}"
+</script>
+<script src={{ url_for('static', filename='js/index.js' ) }}></script>
+<script src={{ url_for('static', filename='js/digit.js' ) }}></script>
 {% endblock %}
