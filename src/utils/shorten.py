@@ -5,14 +5,13 @@ from cachetools import TTLCache
 
 def generate(cache: TTLCache):
     size = 4
-    # chars = string.ascii_lowercase + string.digits
-    chars = string.digits
+    chars = string.ascii_lowercase + string.digits
+    code = None
 
-    code = ""
-    while True:
-        code = ''.join(random.choice(chars) for _ in range(size)).lower()
-        if code in cache.keys():
-            continue
-        else:
-            break
+    while not code:
+        generated_code = ''.join(random.choice(chars) for _ in range(size))
+
+        if generated_code not in cache.keys():
+            code = generated_code
+
     return code
