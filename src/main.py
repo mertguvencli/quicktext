@@ -1,4 +1,3 @@
-
 from router.route import socketio, app
 
 
